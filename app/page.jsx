@@ -5,7 +5,6 @@ export default async function Home() {
     https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}
   `);
   const res = await data.json();
-  console.log(res);
 
   return (
     <main className="mx-4 sm:mx-8 md:mx-16 flex flex-wrap justify-center">
@@ -20,6 +19,7 @@ export default async function Home() {
           Ratings={movie.vote_average}
           Backdrop_path={movie.backdrop_path}
           Release_date={movie.release_date}
+          id={movie.id}
         />
       ))}
     </main>
